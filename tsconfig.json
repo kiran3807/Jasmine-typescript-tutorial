@@ -8,7 +8,7 @@
         "sourceMap": true
     },
     "files": [
-        "./src/config.ts"
+        "./src/app.ts"
     ],
     "exclude": [
         "node_modules"

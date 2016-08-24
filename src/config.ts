@@ -1,3 +1,4 @@
+/// <reference path="../typings/index.d.ts" />
 declare var require:any;
 require.config({
     baseUrl: 'lib',
@@ -8,7 +9,7 @@ require.config({
 
 });
 
-import $ from './jquery';
+import $=require("jquery");
 
 let i = 1;
 

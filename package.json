@@ -1,0 +1,20 @@
+{
+  "name": "jasmine-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "typings install",
+    "start" : "tsc -w",
+    "compile" : "tsc"
+  },
+  "keywords": [],
+  "author": "Kiran sai",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  },
+  "dependencies": {
+    
+  }
+}

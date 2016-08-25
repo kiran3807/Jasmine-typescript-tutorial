@@ -4,17 +4,19 @@
   "description": "",
   "scripts": {
     "postinstall": "typings install",
-    "start" : "tsc -w",
-    "compile" : "tsc"
+    "start": "tsc -w",
+    "compile": "tsc",
+    "jasmine": "jasmine",
+    "pretest": "tsc -p ./spec",
+    "test": "jasmine"
   },
   "keywords": [],
   "author": "Kiran sai",
   "license": "MIT",
   "devDependencies": {
+    "jasmine": "^2.4.1",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
   },
-  "dependencies": {
-    
-  }
+  "dependencies": {}
 }

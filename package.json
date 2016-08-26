@@ -6,15 +6,14 @@
     "postinstall": "typings install",
     "start": "tsc -w",
     "compile": "tsc",
-    "jasmine": "jasmine",
     "pretest": "tsc -p ./spec",
-    "test": "jasmine"
+    "test": "lite-server -c ./spec/test-bs-config.json"
   },
   "keywords": [],
   "author": "Kiran sai",
   "license": "MIT",
   "devDependencies": {
-    "jasmine": "^2.4.1",
+    "lite-server": "^2.2.2",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
   },

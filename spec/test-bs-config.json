@@ -1,5 +1,7 @@
 {
   "port": 9000,
-  "files": ["./**/*.{html,htm,css,js}"],
-  "server": { "baseDir": "./spec" }
+  "files": ["./spec/**/*.{html,htm,css,js}"],
+  "server": { "baseDir": "."   
+            },
+  "startPath":"/testRunner.html"
 }

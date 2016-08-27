@@ -4,17 +4,17 @@
   "description": "",
   "scripts": {
     "postinstall": "typings install",
-    "start": "tsc -w",
+    "prestart": "tsc",
+    "start": "live-server --port=9001",
     "compile": "tsc",
-    "postcompile": "mkdir ./modules & mv ./js/*.d.ts ./modules/",
     "pretest": "tsc -p ./spec",
-    "test": "lite-server -c ./spec/test-bs-config.json"
+    "test": "live-server --port=9000 --open=/testRunner.html"
   },
   "keywords": [],
   "author": "Kiran sai",
   "license": "MIT",
   "devDependencies": {
-    "lite-server": "^2.2.2",
+    "live-server": "^1.1.0",
     "typescript": "^1.8.10",
     "typings": "^1.0.4"
   },

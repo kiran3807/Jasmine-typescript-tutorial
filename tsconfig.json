@@ -5,7 +5,8 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "outDir": "./js",
-        "sourceMap": true
+        "sourceMap": true,
+        "declaration": true
     },
     "files": [
         "./src/app.ts"

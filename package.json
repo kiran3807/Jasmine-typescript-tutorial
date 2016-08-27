@@ -6,6 +6,7 @@
     "postinstall": "typings install",
     "start": "tsc -w",
     "compile": "tsc",
+    "postcompile": "mkdir ./modules & mv ./js/*.d.ts ./modules/",
     "pretest": "tsc -p ./spec",
     "test": "lite-server -c ./spec/test-bs-config.json"
   },

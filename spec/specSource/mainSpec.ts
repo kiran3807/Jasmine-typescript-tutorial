@@ -1,10 +1,11 @@
 /// <reference path="../../typings/index.d.ts" />
+
+import { start } from "../../modules/app"
 describe("Hello test", function() {
     it("first spec", function() {
       
-        expect(1).toBe(2);
+        expect( start(3) ).toBe(2);
     });
 });
 
-let i = 0
-export { i }
+

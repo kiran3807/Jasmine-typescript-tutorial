@@ -5,7 +5,7 @@ export interface Elements{
 }
 
 export interface buildElements{
-	build(objects: any[]):Elements[];
+	build():Elements[];
 	
 }
 
@@ -13,7 +13,7 @@ export interface renderElements{
 	render(elements: Elements[], parent: any): void;
 }
 
-export interface EventAggregator{
+export interface EventEmmiter{
 	handlersArray: {():any}[];
 
 	register(handler: ()=>any):void;

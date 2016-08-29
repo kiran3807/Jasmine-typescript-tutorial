@@ -9,7 +9,10 @@
         "declaration": true
     },
     "files": [
-        "./src/app.ts"
+        "./src/app.ts",
+        "./src/interfaces.ts",
+        "./src/core.ts",
+        "./src/elements.ts"
     ],
     "exclude": [
         "node_modules"

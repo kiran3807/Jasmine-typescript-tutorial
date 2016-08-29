@@ -1,8 +1,8 @@
 require.config({
-    baseUrl: 'js',
+    baseUrl: 'modules',
     paths: {
         'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min',
-        'app' : '../modules/app'
+        'app' : 'app'
     }
 });
 require(['app'], function (app) {

@@ -1,7 +1,7 @@
 import {buildElements,renderElements, Elements, EventEmmiter} from "./interfaces";
 import {NameElement,PostElement} from "./elements";
 
-export class buildNames implements buildElements{
+export class BuildNames implements buildElements{
 
 	private nameObjects: {name: string, id: number}[];
 	private selectEmmiter: EventEmmiter;
@@ -17,7 +17,7 @@ export class buildNames implements buildElements{
 		return elementList;
 	}
 }
-export class buildPosts implements buildElements{
+export class BuildPosts implements buildElements{
 
 	private postObjects: string[];
 	constructor(objects: string[] ){

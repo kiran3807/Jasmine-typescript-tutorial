@@ -14,7 +14,6 @@ export interface renderElements{
 }
 
 export interface EventEmmiter{
-	handlersArray: {():any}[];
 
 	register(handler: ()=>any):void;
 	trigger():void;

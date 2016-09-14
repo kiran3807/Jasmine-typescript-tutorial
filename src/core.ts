@@ -1,18 +1,19 @@
-import {buildElements,renderElements, Elements, EventEmmiter} from "./interfaces";
+/// <reference path="../typings/index.d.ts" />
+import {buildElements,renderElements, Elements, ConcreteView} from "./interfaces";
 import {NameElement,PostElement} from "./elements";
+import {JqueryViewFactory} from "./views";
 
 export class BuildNames implements buildElements{
 
 	private nameObjects: {name: string, id: number}[];
-	private selectEmmiter: EventEmmiter;
-	constructor(objects: {name: string, id: number}[], selectEmmiter: EventEmmiter ){
+
+	constructor(objects: {name: string, id: number}[]){
 		this.nameObjects = objects;
-		this.selectEmmiter = selectEmmiter;
 	}
 	build(): Elements[]{
-		let elementList: NameElement[];
+		let elementList: NameElement[] = [];
 		for(let obj of this.nameObjects){
-			elementList.push(new NameElement(obj['name'],obj['id'],this.selectEmmiter) );
+			elementList.push(new NameElement(obj['name'],obj['id']) );
 		}
 		return elementList;
 	}
@@ -24,7 +25,7 @@ export class BuildPosts implements buildElements{
 		this.postObjects = objects;
 	}
 	build(): Elements[]{
-		let elementList: PostElement[];
+		let elementList: PostElement[] = [];
 		for(let obj of this.postObjects){
 			elementList.push(new PostElement(obj) );
 		}
@@ -32,12 +33,14 @@ export class BuildPosts implements buildElements{
 	}
 }
 
-export class renderElementsImpl implements renderElements{
-	/* parent must be of jquery type */
-	render(elements: Elements[],parent: any){
+export class renderJqueryElements implements renderElements{
+
+	render(elements: Elements[],parent: Elements){
+		let parentElement: ConcreteView = JqueryViewFactory.create(parent);
 		for(let element of elements){
-			let viewElement = element.getViewRepr();
-			parent.append(viewElement);
+			let viewElement: ConcreteView = JqueryViewFactory.create(element);
+			parentElement.getConcreteView().append(viewElement.getConcreteView());	
 		}
+		$(document.body).append(parentElement.getConcreteView());
 	}
 }

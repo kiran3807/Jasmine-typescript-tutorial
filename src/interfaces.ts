@@ -1,7 +1,7 @@
 export interface Elements{	
 	getProperty(prop: string): any;
 	setProperty(prop: string, value: any ): void;
-	getViewRepr(): any; 
+	getType(): any; 
 }
 
 export interface buildElements{
@@ -13,8 +13,7 @@ export interface renderElements{
 	render(elements: Elements[], parent: any): void;
 }
 
-export interface EventEmmiter{
+export interface ConcreteView{
 
-	register(handler: ()=>any):void;
-	trigger():void;
+	getConcreteView(): any
 }

@@ -1,15 +1,24 @@
-import {EventEmmiter} from "./interfaces";
+export type eventHandler = (arg: any)=>void;
 
-export class SelectEventEmmiter implements EventEmmiter{
-	static instance: SelectEventEmmiter;
-	handlers: (()=>any)[];
+export interface EventEmitter{
+	handlers : any[],
+	register(handler: eventHandler): void;
+	trigger(event: any): void;
+}
 
-	register(handler: ()=>any): void{
+let SelectEventEmitter: EventEmitter = {
+	
+	handlers : [],
+
+	register: function(handler: eventHandler){
 		this.handlers.push(handler);
-	}
-	trigger(): void{
+	},
+	trigger: function(arg: any): void{
 		for(let handler of this.handlers){
-			handler();
+			handler(arg);
 		}
 	}
 }
+
+export {SelectEventEmitter};
+
